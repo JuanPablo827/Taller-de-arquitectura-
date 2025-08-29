@@ -5,7 +5,7 @@ public class ObstaculoLlave : MonoBehaviour
     [SerializeField] 
     private GameManager gameManager;
     [SerializeField] 
-    private int puntosNecesarios = 5; // ejemplo: 5 huesos
+    private int puntosNecesarios = 10; // ejemplo: 5 huesos
 
     void Update()
     {

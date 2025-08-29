@@ -4,6 +4,8 @@ public class Puerta : MonoBehaviour
 {
     [SerializeField]
     private GameManager gameManager;
+    [SerializeField]
+    private GameObject PanelVictoria;  // un panel UI que mostraremos al ganar
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,14 +13,21 @@ public class Puerta : MonoBehaviour
         {
             if (gameManager.TieneLlave())
             {
-                Debug.Log("🎉 ¡Nivel completado!");
-                // Aquí puedes cargar la siguiente escena
-                // SceneManager.LoadScene("SiguienteNivel");
+                Debug.Log("¡GANASTE!");
+
+                if (PanelVictoria != null)
+                {
+                    PanelVictoria.SetActive(true);
+                }
+
+                // Pausar el juego
+                Time.timeScale = 0f;
             }
-            else
-            {
-                Debug.Log("🚪 La puerta está cerrada, necesitas la llave.");
-            }
+            
+        }
+        else
+        {
+            Debug.Log("La puerta está cerrada, necesitas la llave.");
         }
     }
 
