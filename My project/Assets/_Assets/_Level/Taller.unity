@@ -12289,8 +12289,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456511414}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.358354, y: -7.398409, z: -0.20465255}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.088276, y: -22.826008, z: 0.061718106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12310,7 +12310,7 @@ Transform:
   - {fileID: 1084083509}
   - {fileID: 1344060186}
   - {fileID: 566820703}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1400464718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509110480
 GameObject:
@@ -14370,6 +14370,39 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1970877154}
   m_SourcePrefab: {fileID: 100100000, guid: 510b2213595e54543a76c455e519c0a9, type: 3}
+--- !u!1 &599060918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599060919}
+  m_Layer: 0
+  m_Name: 'Trampas2 '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &599060919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599060918}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.7299228, y: 15.427599, z: -0.26637065}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1757446949}
+  - {fileID: 1461808408}
+  m_Father: {fileID: 1700207284}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &603444600
 GameObject:
   m_ObjectHideFlags: 0
@@ -18932,8 +18965,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929267257}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52.69, y: -7.53, z: -0.20465255}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -49.960075, y: -22.9576, z: 0.061718106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18953,7 +18986,7 @@ Transform:
   - {fileID: 170668776}
   - {fileID: 452581899}
   - {fileID: 1354663380}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1400464718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &938098281
 PrefabInstance:
@@ -30430,6 +30463,41 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1400464717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1400464718}
+  m_Layer: 0
+  m_Name: Trampas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1400464718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400464717}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.7299228, y: 15.427599, z: -0.26637065}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 456511415}
+  - {fileID: 929267258}
+  - {fileID: 1610567012}
+  - {fileID: 1669704590}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1406336950
 GameObject:
   m_ObjectHideFlags: 0
@@ -32987,11 +33055,11 @@ Transform:
   m_GameObject: {fileID: 1461808407}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.7299228, y: -15.427599, z: 0.26637065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1700207284}
+  m_Father: {fileID: 599060919}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1461808409
 MonoBehaviour:
@@ -36029,8 +36097,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610567011}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.63, y: -24.41, z: -0.20465255}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.900076, y: -39.8376, z: 0.061718106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36050,7 +36118,7 @@ Transform:
   - {fileID: 1058587930}
   - {fileID: 1119822217}
   - {fileID: 856240615}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1400464718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1619562326 stripped
 GameObject:
@@ -37456,7 +37524,7 @@ Transform:
   m_GameObject: {fileID: 1669704589}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.9999931, w: -0.003730433}
-  m_LocalPosition: {x: -15.31509, y: 57.31979, z: -0.20465255}
+  m_LocalPosition: {x: -12.585167, y: 41.89219, z: 0.061718106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37476,7 +37544,7 @@ Transform:
   - {fileID: 212198898}
   - {fileID: 1862725470}
   - {fileID: 1444182586}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1400464718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180.427}
 --- !u!1 &1675049181
 GameObject:
@@ -38580,8 +38648,7 @@ Transform:
   m_Children:
   - {fileID: 1940129223}
   - {fileID: 603444601}
-  - {fileID: 1757446949}
-  - {fileID: 1461808408}
+  - {fileID: 599060919}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1721010693
@@ -39089,11 +39156,11 @@ Transform:
   m_GameObject: {fileID: 1757446948}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.7299228, y: -15.427599, z: 0.26637065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1700207284}
+  m_Father: {fileID: 599060919}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &1757446950
 TilemapCollider2D:
@@ -59433,11 +59500,8 @@ SceneRoots:
   - {fileID: 6932307205533244452}
   - {fileID: 8311815115884696024}
   - {fileID: 5775385649602325139}
+  - {fileID: 1400464718}
   - {fileID: 1958884639}
-  - {fileID: 456511415}
-  - {fileID: 929267258}
-  - {fileID: 1610567012}
-  - {fileID: 1669704590}
   - {fileID: 236253081}
   - {fileID: 1915159986}
   - {fileID: 1607684978}

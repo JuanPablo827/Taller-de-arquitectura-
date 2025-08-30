@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Valores Iniciales")]
+    
     public int vidas = 3;          // Vidas iniciales
     public int puntos = 0;         // Puntos iniciales
     public float tiempo = 60f;     // Tiempo en segundos (ej: 1 minuto)
@@ -12,11 +12,15 @@ public class GameManager : MonoBehaviour
     // ESTA ES LA VARIABLE CLAVE
     private bool tieneLlave = false; // Estado de la llave (empieza en "No")
 
-    [Header("Referencias de UI")]
-    [SerializeField] private TMP_Text textoVidas;
-    [SerializeField] private TMP_Text textoPuntos;
-    [SerializeField] private TMP_Text textoTiempo;
-    [SerializeField] private TMP_Text textoLlave;
+    
+    [SerializeField] 
+    private TMP_Text textoVidas;
+    [SerializeField] 
+    private TMP_Text textoPuntos;
+    [SerializeField] 
+    private TMP_Text textoTiempo;
+    [SerializeField] 
+    private TMP_Text textoLlave;
 
     void Start()
     {
