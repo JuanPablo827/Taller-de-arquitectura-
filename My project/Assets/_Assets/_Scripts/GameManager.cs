@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     
     public int vidas = 3;          // Vidas iniciales
     public int puntos = 0;         // Puntos iniciales
-    public float tiempo = 60f;     // Tiempo en segundos (ej: 1 minuto)
+    public float tiempo = 120f;     // Tiempo en segundos (ej: 1 minuto)
 
     // ESTA ES LA VARIABLE CLAVE
     private bool tieneLlave = false; // Estado de la llave (empieza en "No")

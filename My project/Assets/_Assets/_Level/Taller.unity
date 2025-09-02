@@ -18320,7 +18320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidas: 3
   puntos: 0
-  tiempo: 60
+  tiempo: 120
   textoVidas: {fileID: 147688143}
   textoPuntos: {fileID: 1116542370}
   textoTiempo: {fileID: 125855254}
