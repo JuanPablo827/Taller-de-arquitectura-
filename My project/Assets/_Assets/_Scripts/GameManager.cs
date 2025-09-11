@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,7 +25,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        ActualizarUI();
+        ActualizarUI("vidas");
+        ActualizarUI("puntos");
+        ActualizarUI("tiempo");
+        ActualizarUI("llave");
     }
 
     void Update()
@@ -38,10 +42,10 @@ public class GameManager : MonoBehaviour
             {
                 tiempo = 0;
                 Debug.Log("Tiempo agotado → Game Over");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                EstadoDeJuego("Perdiste");
             }
 
-            ActualizarUI();
+            ActualizarUI("tiempo");
         }
     }
 
@@ -49,18 +53,18 @@ public class GameManager : MonoBehaviour
     public void SumarPuntos(int cantidad)
     {
         puntos += cantidad;
-        ActualizarUI();
+        ActualizarUI("puntos");
     }
 
     public void RestarVidas(int cantidad)
     {
         vidas -= cantidad;
-        ActualizarUI();
+        ActualizarUI("vidas");
 
         if (vidas <= 0)
         {
             Debug.Log("Game Over");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            EstadoDeJuego("Perdiste");
         }
     }
 
@@ -68,7 +72,7 @@ public class GameManager : MonoBehaviour
     {
         // AQUÍ se cambia a true cuando el jugador la recoge
         tieneLlave = true;
-        ActualizarUI();
+        ActualizarUI("llave");
     }
 
     public bool TieneLlave()
@@ -77,11 +81,52 @@ public class GameManager : MonoBehaviour
     }
 
     // -------- ACTUALIZAR INTERFAZ --------
-    private void ActualizarUI()
+    private void ActualizarUI(string texto)
     {
-        if (textoVidas != null) textoVidas.text = "Vidas: " + vidas;
-        if (textoPuntos != null) textoPuntos.text = "Puntos: " + puntos;
-        if (textoTiempo != null) textoTiempo.text = "Tiempo: " + Mathf.Ceil(tiempo);
-        if (textoLlave != null) textoLlave.text = "Llave: " + (tieneLlave ? "Sí" : "No");
+        switch (texto)
+        {
+            case "vidas":
+            textoVidas.text = "Vidas: " + vidas;
+                break;
+            case "puntos":
+                textoPuntos.text = "Puntos: " + puntos;
+                break;
+            case "tiempo":
+                textoTiempo.text = "Tiempo: " + Mathf.Ceil(tiempo);
+                break;
+            case "llave":
+                textoLlave.text = "Llave: " + (tieneLlave ? "Sí" : "No");
+                break;
+                default:
+
+                break;
+        }
+    }
+
+    public void EstadoDeJuego(string estado)
+    {
+        switch (estado) 
+        {
+            case "Ganaste":
+                //cargar la escena de victoria, la cual tiene un texto que diga ganaste
+                //LoadScene();
+                SceneManager.LoadScene("Ganaste");
+                break;
+            case "Perdiste":
+                //cargar la escena del juego 
+                //LoadScene();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                break;
+            case "Pausa":
+                //tenemos un boton en la ui al darle click pausa el juego
+                //Time.timescale = 0;
+                Time.timeScale = 0f;
+                break;
+            case "Jugando":
+                //tenemos un boton que al darle click continua el juego 
+                //Time.timeScale = 1;
+                Time.timeScale = 1f;
+                break;
+        }
     }
 }
