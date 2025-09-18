@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Assets/_Level/Taller.unity
     guid: b0b742e43e0ffad4ba4704b3654182a9
+  - enabled: 1
+    path: Assets/_Assets/_Level/Ganaste.unity
+    guid: 236d9e3975ec40846b08462456229445
+  - enabled: 1
+    path: Assets/_Assets/_Level/Perdiste.unity
+    guid: 210668c578bc32748a008a0ccbc1f66f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

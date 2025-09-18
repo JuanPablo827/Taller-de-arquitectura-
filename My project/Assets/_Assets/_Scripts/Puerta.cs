@@ -21,7 +21,7 @@ public class Puerta : MonoBehaviour
                 }
 
                 // Pausar el juego
-                Time.timeScale = 0f;
+                gameManager.EstadoDeJuego("Puasa");
             }
             
         }

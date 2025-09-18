@@ -110,12 +110,12 @@ public class GameManager : MonoBehaviour
             case "Ganaste":
                 //cargar la escena de victoria, la cual tiene un texto que diga ganaste
                 //LoadScene();
-                SceneManager.LoadScene("Ganaste");
+                SceneManager.LoadScene(2);
                 break;
             case "Perdiste":
                 //cargar la escena del juego 
-                //LoadScene();
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //LoadScene();s
+                SceneManager.LoadScene(3);
                 break;
             case "Pausa":
                 //tenemos un boton en la ui al darle click pausa el juego
@@ -126,6 +126,9 @@ public class GameManager : MonoBehaviour
                 //tenemos un boton que al darle click continua el juego 
                 //Time.timeScale = 1;
                 Time.timeScale = 1f;
+                break;
+            case "Salir":
+                Application.Quit();
                 break;
         }
     }
