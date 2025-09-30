@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     
-    public int vidas = 3;          // Vidas iniciales
+    public int vidas = 5;          // Vidas iniciales
     public int puntos = 0;         // Puntos iniciales
     public float tiempo = 120f;     // Tiempo en segundos (ej: 1 minuto)
 
