@@ -23,6 +23,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] 
     private TMP_Text textoLlave;
 
+    [SerializeField] private TMP_Text[] nombres; 
+    [SerializeField]UIManager uiManager;
+
+
+
+
+
+
+
+
+
+
     void Start()
     {
         ActualizarUI("vidas");
@@ -54,6 +66,7 @@ public class GameManager : MonoBehaviour
     {
         puntos += cantidad;
         ActualizarUI("puntos");
+        uiManager.ActualizarCorazones(vidas );
     }
 
     public void RestarVidas(int cantidad)
