@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     
-    public int vidas = 3;          // Vidas iniciales
+    public int vidas = 5;          // Vidas iniciales
     public int puntos = 0;         // Puntos iniciales
     public float tiempo = 120f;     // Tiempo en segundos (ej: 1 minuto)
 
@@ -14,8 +14,7 @@ public class GameManager : MonoBehaviour
     private bool tieneLlave = false; // Estado de la llave (empieza en "No")
 
     
-    [SerializeField] 
-    private TMP_Text textoVidas;
+  
     [SerializeField] 
     private TMP_Text textoPuntos;
     [SerializeField] 
@@ -37,10 +36,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        ActualizarUI("vidas");
-        ActualizarUI("puntos");
+
+        uiManager.ActualizarHuesos(puntos);
         ActualizarUI("tiempo");
         ActualizarUI("llave");
+        uiManager.ActualizarCorazones(vidas);
     }
 
     void Update()
@@ -66,13 +66,14 @@ public class GameManager : MonoBehaviour
     {
         puntos += cantidad;
         ActualizarUI("puntos");
-        uiManager.ActualizarCorazones(vidas );
+        uiManager.ActualizarHuesos(puntos);
     }
 
     public void RestarVidas(int cantidad)
     {
         vidas -= cantidad;
         ActualizarUI("vidas");
+        uiManager.ActualizarCorazones(vidas);
 
         if (vidas <= 0)
         {
@@ -98,12 +99,7 @@ public class GameManager : MonoBehaviour
     {
         switch (texto)
         {
-            case "vidas":
-            textoVidas.text = "Vidas: " + vidas;
-                break;
-            case "puntos":
-                textoPuntos.text = "Puntos: " + puntos;
-                break;
+            
             case "tiempo":
                 textoTiempo.text = "Tiempo: " + Mathf.Ceil(tiempo);
                 break;

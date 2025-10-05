@@ -10,32 +10,39 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Image[] spriteCorazon;
 
+
+
+    [Header("Huesos UI")]
+    [SerializeField] private GameObject[] gameObjectHuesos;  // contenedores de cada ícono
+    [SerializeField] private Image[] spriteHuesos;           // imágenes de cada hueso
+
+
     public void ActualizarCorazones(int vidas)
     {
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < spriteCorazon.Length; i++)
         {
-            spriteCorazon[i].enabled = true;
+            bool corazonActivo = i < vidas;
+            gameObjectCorazon[i].SetActive(corazonActivo);
+            spriteCorazon[i].enabled = corazonActivo;
         }
-
-        spriteCorazon[0].enabled = false;
-
-        gameObjectCorazon[0].SetActive(true);
-        gameObjectCorazon[1].SetActive(false);
-        gameObjectCorazon[2].SetActive(false);
-        gameObjectCorazon[3].SetActive(false);
-        gameObjectCorazon[4].SetActive(false);
-
-
-
-
-
-
-
     }
+
+    public void ActualizarHuesos(int cantidad)
+    {
+        for (int i = 0; i < spriteHuesos.Length; i++)
+        {
+            bool huesoActivo = i < cantidad;
+            gameObjectHuesos[i].SetActive(huesoActivo);
+            spriteHuesos[i].enabled = huesoActivo;
+        }
+    }
+}
+
+
+
 
         
 
 
 
-    }
 
