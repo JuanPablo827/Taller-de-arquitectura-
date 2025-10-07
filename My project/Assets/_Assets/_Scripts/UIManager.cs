@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -10,22 +10,19 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Image[] spriteCorazon;
 
-
-
-    [Header("Huesos UI")]
-    [SerializeField] private GameObject[] gameObjectHuesos;  // contenedores de cada ícono
-    [SerializeField] private Image[] spriteHuesos;           // imágenes de cada hueso
-
-
     public void ActualizarCorazones(int vidas)
     {
-        for(int i = 0; i < spriteCorazon.Length; i++)
+        for (int i = 0; i < spriteCorazon.Length; i++)
         {
             bool corazonActivo = i < vidas;
             gameObjectCorazon[i].SetActive(corazonActivo);
             spriteCorazon[i].enabled = corazonActivo;
         }
     }
+
+    [Header("Huesos UI")]
+    [SerializeField] private GameObject[] gameObjectHuesos;  // contenedores de cada Ã­cono
+    [SerializeField] private Image[] spriteHuesos;           // imÃ¡genes de cada hueso
 
     public void ActualizarHuesos(int cantidad)
     {
@@ -37,12 +34,3 @@ public class UIManager : MonoBehaviour
         }
     }
 }
-
-
-
-
-        
-
-
-
-

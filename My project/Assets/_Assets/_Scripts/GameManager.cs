@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    
+
     public int vidas = 5;          // Vidas iniciales
     public int puntos = 0;         // Puntos iniciales
     public float tiempo = 120f;     // Tiempo en segundos (ej: 1 minuto)
@@ -13,19 +13,20 @@ public class GameManager : MonoBehaviour
     // ESTA ES LA VARIABLE CLAVE
     private bool tieneLlave = false; // Estado de la llave (empieza en "No")
 
-    
-  
-    [SerializeField] 
-    private TMP_Text textoPuntos;
-    [SerializeField] 
+    [SerializeField] private GameObject panelMenu;  // Panel del menú de pausa
+    private bool juegoPausado = false;
+
+
+
+
+    [SerializeField]
     private TMP_Text textoTiempo;
-    [SerializeField] 
-    private TMP_Text textoLlave;
+  
 
-    [SerializeField] private TMP_Text[] nombres; 
-    [SerializeField]UIManager uiManager;
+    [SerializeField] private TMP_Text[] nombres;
+    [SerializeField] UIManager uiManager;
 
-
+    [SerializeField] private GameObject Llave;
 
 
 
@@ -36,10 +37,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        if (Llave != null)
+        {
+            Llave.SetActive(false); //llave
+        }
+
 
         uiManager.ActualizarHuesos(puntos);
         ActualizarUI("tiempo");
-        ActualizarUI("llave");
         uiManager.ActualizarCorazones(vidas);
     }
 
@@ -59,6 +64,22 @@ public class GameManager : MonoBehaviour
 
             ActualizarUI("tiempo");
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (juegoPausado)
+            {
+                ReanudarJuego();
+            }
+            else
+            {
+                PausarJuego();
+            }
+        }
+
+
+
+
     }
 
     // -------- MÉTODOS PÚBLICOS --------
@@ -86,7 +107,10 @@ public class GameManager : MonoBehaviour
     {
         // AQUÍ se cambia a true cuando el jugador la recoge
         tieneLlave = true;
-        ActualizarUI("llave");
+        if (Llave != null)
+        {
+            Llave.SetActive(true);
+        }
     }
 
     public bool TieneLlave()
@@ -94,19 +118,41 @@ public class GameManager : MonoBehaviour
         return tieneLlave;
     }
 
+    public void PausarJuego()
+    {
+        panelMenu.SetActive(true);
+        Time.timeScale = 0f;
+        juegoPausado = true;
+    }
+
+    public void ReanudarJuego()
+    {
+        panelMenu.SetActive(false);
+        Time.timeScale = 1f;
+        juegoPausado = false;
+    }
+
+
+
+
+
+
+
+
+
+
+
     // -------- ACTUALIZAR INTERFAZ --------
     private void ActualizarUI(string texto)
     {
         switch (texto)
         {
-            
+
             case "tiempo":
                 textoTiempo.text = "Tiempo: " + Mathf.Ceil(tiempo);
                 break;
-            case "llave":
-                textoLlave.text = "Llave: " + (tieneLlave ? "Sí" : "No");
-                break;
-                default:
+            
+            default:
 
                 break;
         }
@@ -114,7 +160,7 @@ public class GameManager : MonoBehaviour
 
     public void EstadoDeJuego(string estado)
     {
-        switch (estado) 
+        switch (estado)
         {
             case "Ganaste":
                 //cargar la escena de victoria, la cual tiene un texto que diga ganaste
